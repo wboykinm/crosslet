@@ -39,26 +39,26 @@ var config = {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
     },
     view: {
-      center: [53.505, -2.09],
-      zoom: 6
+      center: [40.735657, -74.1723667],
+      zoom: 11
     },
     geo: {
-      url: "data/geo.json",
-      name_field: "name",
-      id_field: "id",
-      //topo_object: "uk_regions.pp"
+      url: "https://rawgithub.com/wboykinm/crosslet/gh-pages/examples/newark/newark3.topo.json",
+      name_field: "name1",
+      id_field: "ID",
+      topo_object: "blockgroups"
     }
   },
   data: {
     version: "1.0",
-    id_field: "code"
+    id_field: "id"
   },
   dimensions: {
-    very_good : {
-      title: "Percentage of those who would highly recommend this GP",
+    existing : {
+      title: "Existing Tree Canopy Cover",
       data: {
-        dataSet: "data/data.csv",
-        field: "very_good",
+        dataSet: "https://rawgithub.com/wboykinm/crosslet/gh-pages/examples/newark/newark.csv",
+        field: "tc_e_f",
 	method: d3.csv,
 	preformat: pref,
 	colorscale: d3.scale.linear().domain([1, 10, 20]).range(["red", "yellow", "green"]).interpolate(d3.cie.interpolateLab),
@@ -69,11 +69,11 @@ var config = {
 	input: inputf
       },
     },  
-    good : {
-      title: "Percentage of those who would recommend this GP",
+    potential : {
+      title: "Potential Tree Canopy Cover",
       data: {
-        dataSet: "data/data.csv",
-        field: "good",
+        dataSet: "https://rawgithub.com/wboykinm/crosslet/gh-pages/examples/newark/newark.csv",
+        field: "tc_p_f",
         method: d3.csv,
 	preformat: pref2,
 	colorscale: d3.scale.linear().domain([1, 10, 20]).range(["red", "yellow", "green"]).interpolate(d3.cie.interpolateLab),
@@ -88,8 +88,8 @@ var config = {
   defaults: {
     colorscale: d3.scale.linear().domain([1, 10, 20]).range(["red", "yellow", "green"]).interpolate(d3.cie.interpolateLab),
     opacity: 0.7,
-    order: ["very_good","good"],
-    active: "very_good"
+    order: ["existing","potential"],
+    active: "existing"
   },
 };
 
