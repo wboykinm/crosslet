@@ -290,8 +290,8 @@
   fill-opacity: 0.5;
 }
 .crosslet svg g.crosslet_geometry path {
-  fill: white;
-  stroke: none;
+  fill: #0033ff;
+  stroke: #e2e3e3;
   /*stroke: black; */
 
 }
