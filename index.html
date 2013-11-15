@@ -64,107 +64,118 @@ var axisf=function(){ return function(d){return Math.round(d*10)/10+"%";}};
 var yearsf =function(){ return Math.round};
 
 var config = {
-  map: {
-    leaflet: {
-      key: "fe623ce312234f8f9333bbee72d4a176",
-      styleId: 64657
+    map: {
+        leaflet: {
+            key: "fe623ce312234f8f9333bbee72d4a176",
+            styleId: 64657
+        },
+        view: {
+            center: [
+                40.735657,
+                -74.1723667
+            ],
+            zoom: 12
+        },
+        geo: {
+            url: "examples/newark/newark.topojson",
+            name_field: "id",
+            id_field: "id",
+            topo_object: "layer1"
+        }
     },
-    view: {
-      center: [40.735657, -74.1723667],
-      zoom: 12
+    data: {
+        version: "1.0",
+        id_field: "id"
     },
-    geo: {
-      url: "examples/newark/newark.topojson",
-      name_field: "id",
-      id_field: "id",
-      topo_object: "layer1"
-    }
-  },
-  data: {
-    version: "1.0",
-    id_field: "id"
-  },
-  dimensions: {
-    existing: {
-      title: "Existing Tree Canopy",
-      data: {
-        colorscale: d3.scale.linear().domain([1, 10, 20]).range([ "red", "yellow","green"]).interpolate(d3.cie.interpolateLab),
-        dataSet: "examples/newark/tc_e_p.csv",
-        field: "y_2012",
-
-      },
-      format: {
-        short: function() {return Math.round},
-        input: function() {return Math.round},
-
-      }
-      
-    },  
-    possible: {
-      title: "Possible Tree Canopy",
-      data: {
-        colorscale: d3.scale.linear().domain([1, 10, 20]).range([ "red", "yellow","green"]).interpolate(d3.cie.interpolateLab),
-        dataSet: "examples/newark/tc_p_p.csv",
-        field: "y_2012",
-        /*exponent:0.4,
-        ticks: [2000,10000,25000,50000,80000]*/
-
-      },
-      format: {
-        short: function() {return Math.round},
-        input: function() {return Math.round},
-
-        /*short: function(){return function(d) {return "$"+d3.format(",")(Math.round(d))}},
-
-        input: function(){return Math.round},
-        axis: function(){return function(d) {return "$"+Math.round(d/1000)+"k"}},*/
-
-      }
-    
-    },  
-    /*gini: {
-      title: "Possible Tree Canopy - Currently Impervious",
-      data: {
-        //colorscale: d3.scale.linear().domain([1, 10, 20]).range([ "red", "yellow","green"]).interpolate(d3.cie.interpolateLab),
-        dataSet: "examples/newark/tc_pi_p.csv",
-        field: "y_2012"
-      },
-    },*/
-    possibleImp: {
-      title: "Possible Tree Canopy - Currently Impervious",
-      data: {
-        colorscale: d3.scale.linear().domain([1, 10, 20]).range([ "red", "yellow","green"]).interpolate(d3.cie.interpolateLab),
-        dataSet: "examples/newark/tc_pi_p.csv",
-        field: "y_2012",
-        //exponent: 2.4
-      },
-      format:{
-        short: function() {return Math.round},
-        input: function() {return Math.round},
-
-        /*short: function(dd) { return function(d){return Math.round(d)+" years"}},
-        long: function(dd) { return function(d){return Math.round(d)+" years"}},
-        input: function() {return Math.round},
-        axis: function(dd) { return function(d){return Math.round(d)+"y"}},
-
-      }
-    },
-    democracy: {
-      title: "Democracy Index",
-      data: {
-        colorscale: d3.scale.linear().domain([1, 10, 20]).range([ "red", "yellow","green"]).interpolate(d3.cie.interpolateLab),
-        dataSet: "examples/world/data/data.tsv",
-        field: "democracy_2011",
-      },*/
-    },  
-           
-  },
-  defaults: {
-    //colorscale: d3.scale.linear().domain([1, 10, 20]).range(["green", "yellow", "red"]).interpolate(d3.cie.interpolateLab),
-    opacity: 0.9,
-    order: ["existing","possible","possibleImp"],
-    active: "existing"
-  },
+    dimensions: {
+        existing: {
+            title: "Existing Tree Canopy",
+            data: {
+                colorscale: d3.scale.linear().domain([
+                    1,
+                    10,
+                    20
+                ]).range([
+                    "red",
+                    "yellow",
+                    "green"
+                ]).interpolate(d3.cie.interpolateLab),
+                dataSet: "examples/newark/tc_e_p.csv",
+                field: "y_2012",
+                
+            },
+            format: {
+                short: function(){
+                    returnMath.round
+                },
+                input: function(){
+                    returnMath.round
+                },
+                
+            }
+        },
+        possible: {
+            title: "Possible Tree Canopy",
+            data: {
+                colorscale: d3.scale.linear().domain([
+                    1,
+                    10,
+                    20
+                ]).range([
+                    "red",
+                    "yellow",
+                    "green"
+                ]).interpolate(d3.cie.interpolateLab),
+                dataSet: "examples/newark/tc_p_p.csv",
+                field: "y_2012",
+                
+            },
+            format: {
+                short: function(){
+                    returnMath.round
+                },
+                input: function(){
+                    returnMath.round
+                },
+                
+            }
+        },
+        possibleImp: {
+            title: "Possible Tree Canopy - Currently Impervious",
+            data: {
+                colorscale: d3.scale.linear().domain([
+                    1,
+                    10,
+                    20
+                ]).range([
+                    "red",
+                    "yellow",
+                    "green"
+                ]).interpolate(d3.cie.interpolateLab),
+                dataSet: "examples/newark/tc_pi_p.csv",
+                field: "y_2012",
+                
+            },
+            format: {
+                short: function(){
+                    returnMath.round
+                },
+                input: function(){
+                    returnMath.round
+                },
+                
+            }
+          }
+        },
+        defaults: {
+            opacity: 0.9,
+            order: [
+                "existing",
+                "possible",
+                "possibleImp"
+            ],
+            active: "existing"
+        }
 };
 
 console.log(config);
