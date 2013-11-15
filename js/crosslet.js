@@ -709,11 +709,11 @@ crosslet.defaultConfig = {
     leaflet: {
       key: "--your key--",
       styleId: 64657,
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+      attribution: 'Map data &copy; Mapbox & <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     },
     view: {
-      center: [51.505, -0.09],
-      zoom: 11
+      center: [40.735657, -74.1723667],
+      zoom: 12
     },
     geo: {
       url: "please specify correct location of your geojson",
@@ -1333,7 +1333,7 @@ crosslet.MapView = (function(_super) {
     this.hoverFunc = this.default_hover;
     $(this.el).attr("class", "crosslet");
     this.map = L.map(el[0]).setView(this.config.map.view.center, this.config.map.view.zoom);
-    L.tileLayer("http://{s}.tile.cloudmade.com/{key}/{styleId}/256/{z}/{x}/{y}.png", this.config.map.leaflet).addTo(this.map);
+    L.tileLayer("http://{s}.tiles.mapbox.com/v3/landplanner.map-3xuspbkm/{z}/{x}/{y}.png", this.config.map.leaflet).addTo(this.map);
     this.control = $("<div class='crosslet_panel'></div>");
     this.info = L.Control.extend({
       options: {
