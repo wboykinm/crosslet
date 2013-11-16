@@ -1333,7 +1333,7 @@ crosslet.MapView = (function(_super) {
     this.hoverFunc = this.default_hover;
     $(this.el).attr("class", "crosslet");
     this.map = L.map(el[0]).setView(this.config.map.view.center, this.config.map.view.zoom);
-    L.tileLayer("http://{s}.tiles.mapbox.com/v3/landplanner.map-3xuspbkm/{z}/{x}/{y}.png", this.config.map.leaflet).addTo(this.map);
+    L.tileLayer("http://{s}.tiles.mapbox.com/v3/landplanner.ga0g9p2n/{z}/{x}/{y}.png", this.config.map.leaflet).addTo(this.map);
     this.control = $("<div class='crosslet_panel'></div>");
     this.info = L.Control.extend({
       options: {
