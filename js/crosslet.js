@@ -731,7 +731,7 @@ crosslet.defaultConfig = {
   },
   dimensions: {},
   defaults: {
-    colorscale: d3.scale.linear().domain([1, 10, 20]).range(["green", "yellow", "red"]).interpolate(d3.cie.interpolateLab),
+    colorscale: d3.scale.linear().domain([1, 10, 20]).range(["green", "yellow", "#A92024"]).interpolate(d3.cie.interpolateLab),
     opacity: 0.75,
     order: []
   }
@@ -754,7 +754,7 @@ crosslet.defaultDimensionConfig = {
       };
     },
     ticks: 4,
-    colorscale: d3.scale.linear().domain([1, 10, 20]).range(["green", "yellow", "red"]).interpolate(d3.cie.interpolateLab),
+    colorscale: d3.scale.linear().domain([1, 10, 20]).range(["green", "yellow", "#A92024"]).interpolate(d3.cie.interpolateLab),
     exponent: 1
   },
   format: {
