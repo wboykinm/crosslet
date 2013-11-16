@@ -96,7 +96,7 @@ var config = {
         field: "tc_e_f",
 	method: d3.csv,
 	preformat: pref,
-	colorscale: d3.scale.linear().domain([1, 10, 20]).range(["blue", "yellow", "green"]).interpolate(d3.cie.interpolateLab),
+	colorscale: d3.scale.linear().domain([1, 20]).range(["yellow", "green"]).interpolate(d3.cie.interpolateLab),
 
       },
       format:{
@@ -111,7 +111,7 @@ var config = {
         field: "tc_p_f",
         method: d3.csv,
 	preformat: pref2,
-	colorscale: d3.scale.linear().domain([1, 10, 20]).range(["blue", "yellow", "green"]).interpolate(d3.cie.interpolateLab),
+	colorscale: d3.scale.linear().domain([1, 20]).range(["yellow", "green"]).interpolate(d3.cie.interpolateLab),
       },
       format:{
         short: percentf,
