@@ -712,7 +712,7 @@ crosslet.defaultConfig = {
       attribution: 'Map data &copy; Stamen & <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
     },
     view: {
-      center: [40.735657, -74.1723667],
+      center: [40.785657, -74.1723667],
       zoom: 12
     },
     geo: {
