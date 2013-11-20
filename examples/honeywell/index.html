@@ -101,8 +101,8 @@ var config = {
         ticks: [0,0.1,0.2,0.3]
       },
       format: {
-        short: function(){return function(d) {return "$"+d3.format(",")(Math.round(d))}},
-        input: function(){return Math.round},
+        short: function(){return function(d) {return "$"+d3.format(",")/*(Math.round(d))*/}},
+        //input: function(){return Math.round},
         //axis: function(){return function(d) {return "$"+Math.round(d/1000)+"k"}},
       }
     },  
@@ -118,8 +118,8 @@ var config = {
         ticks: [35,40,45,50,55,60]
       },
       format: {
-        short: function(){return function(d) {return "$"+d3.format(",")(Math.round(d))}},
-        input: function(){return Math.round},
+        short: function(){return function(d) {return "$"+d3.format(",")/*(Math.round(d))*/}},
+        //input: function(){return Math.round},
         //axis: function(){return function(d) {return "$"+Math.round(d/1000)+"k"}},
       }
     }
