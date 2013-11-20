@@ -95,13 +95,12 @@ var config = {
         dataSet: "data/zipnypa.csv",
         field: "ec1",
       	method: d3.csv,
-      	//preformat: pref,
-      	colorscale: d3.scale.linear().domain([1, 20]).range(["yellow", "blue"]).interpolate(d3.cie.interpolateLab),
+      	colorscale: d3.scale.linear().domain([1, 20]).range(["white", "blue"]).interpolate(d3.cie.interpolateLab),
         exponent:0.4,
         ticks: [0,0.1,0.2,0.3]
       },
       format: {
-        short: function(){return function(d) {return "$"+d3.format(",")/*(Math.round(d))*/}},
+        //short: function(){return function(d) {return "$"+d3.format(",")/*(Math.round(d))*/}},
         //input: function(){return Math.round},
         //axis: function(){return function(d) {return "$"+Math.round(d/1000)+"k"}},
       }
@@ -112,13 +111,12 @@ var config = {
         dataSet: "data/zipnypa.csv",
         field: "ec5",
         method: d3.csv,
-      	//preformat: pref2,
-      	colorscale: d3.scale.linear().domain([1, 20]).range(["yellow", "dark green"]).interpolate(d3.cie.interpolateLab),
+      	colorscale: d3.scale.linear().domain([1, 20]).range(["white", "green"]).interpolate(d3.cie.interpolateLab),
         //exponent:0.4,
         ticks: [35,40,45,50,55,60]
       },
       format: {
-        short: function(){return function(d) {return "$"+d3.format(",")/*(Math.round(d))*/}},
+        //short: function(){return function(d) {return "$"+d3.format(",")/*(Math.round(d))*/}},
         //input: function(){return Math.round},
         //axis: function(){return function(d) {return "$"+Math.round(d/1000)+"k"}},
       }
