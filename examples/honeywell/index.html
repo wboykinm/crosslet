@@ -62,10 +62,10 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
 <script src="crosslet.js"></script>
 <script type="text/javascript">
-var percentf=function() { return function(d){ return Math.round(d*100)+"%";}}
-var inputf=function() { return function(d){ return Math.round(d*100)/100;}}
-var pref=function() {return function(d){ if(+d<0) d=null; return d;}}
-var pref2=function() {return function(d){ if(+d<0) return null; return Math.min(d,0.6);}}
+//var percentf=function() { return function(d){ return Math.round(d*100)+"%";}}
+//var inputf=function() { return function(d){ return Math.round(d*100)/100;}}
+//var pref=function() {return function(d){ if(+d<0) d=null; return d;}}
+//var pref2=function() {return function(d){ if(+d<0) return null; return Math.min(d,0.6);}}
 var config = {
   map: {
     leaflet: {
@@ -95,7 +95,7 @@ var config = {
         dataSet: "data/zipnypa.csv",
         field: "ec1",
       	method: d3.csv,
-      	preformat: pref,
+      	//preformat: pref,
       	colorscale: d3.scale.linear().domain([1, 20]).range(["yellow", "blue"]).interpolate(d3.cie.interpolateLab),
         //exponent:0.4,
         ticks: [0,0.1,0.2,0.3]
@@ -112,7 +112,7 @@ var config = {
         dataSet: "data/zipnypa.csv",
         field: "ec2",
         method: d3.csv,
-      	preformat: pref2,
+      	//preformat: pref2,
       	colorscale: d3.scale.linear().domain([1, 20]).range(["yellow", "dark green"]).interpolate(d3.cie.interpolateLab),
         //exponent:0.4,
         ticks: [35,40,45,50,55,60]
